@@ -24,10 +24,14 @@ with open('data/1year_btcusd_annotated.csv', 'w') as f1:
     annotated.writerow(head + ['News'])
 
     news = {}
-    with open('data/2021_news.csv', 'r') as f3:
-        csv_news = csv.reader(f3)
-        for row in csv_news:
-            news[row[0]] = row[2]
+
+    def populate_news(fname):
+        with open(fname, 'r') as f3:
+            csv_news = csv.reader(f3)
+            for row in csv_news:
+                news[row[0]] = row[2]
+    populate_news('data/2020_news.csv')
+    populate_news('data/2021_news.csv')
 
     for row in btcusd:
         annotated_row = row + [news.get(row[0], "")]
