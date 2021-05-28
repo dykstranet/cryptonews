@@ -14,6 +14,10 @@
   <body>
     <div id="crypto-news-plot"></div>
     <script>
+      const queryString = window.location.search
+      const urlParams = new URLSearchParams(queryString)
+      const qvalue = urlParams.get('q')
+
       function draw_graphic(data, markers) {
         MG.data_graphic({
           title: "Annotated BTC price plot",
@@ -41,21 +45,23 @@
         // Remove thousand separators
         for (var i = 0; i < data.length; i++) {
           dateobj = new Date(data[i].Date)
-          content = {'Date': dateobj, 'Datestr': data[i].Date, 'Price': parseFloat(data[i].Close), 'News': data[i].News}
+          let news = data[i].News
+          if (!!qvalue) {
+            if (data[i].News !== '' && data[i].News.toLowerCase().includes(qvalue)) {
+              news = data[i].News
+            } else {
+              news = ''
+            }
+          }
+          content = {'Date': dateobj, 'Datestr': data[i].Date, 'Price': parseFloat(data[i].Close), 'News': news}
           newData.push(content)
-          if (data[i].News !== "") {
+          if (news !== "") {
             markers.push({'Date': dateobj, 'label': ''})//i.toString()})
             //markers.push({'Date': dateobj, 'label': i.toString()})
           }
         }
         draw_graphic(newData, markers)
       })
-
-      function modify() {
-        markers = markers.slice(1, 3)
-        draw_graphic(newData, markers)
-      }
     </script>
-    <!--<button id="modify" type="button" onclick="modify()">Click Me!</button>-->
   </body>
 </html>
