@@ -21,7 +21,9 @@
 
       function filter(content, keyword) {
         if (!!keyword) {
-          if (content !== '' && content.toLowerCase().includes(keyword)) {
+          const kwList = keyword.split(' ')
+          const contentLower = content.toLowerCase()
+          if (content !== '' && kwList.some(k => contentLower.includes(k))) {
             return content
           } else {
             return ''
