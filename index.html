@@ -17,6 +17,18 @@
       const queryString = window.location.search
       const urlParams = new URLSearchParams(queryString)
       const qvalue = urlParams.get('q')
+      const siteValue = urlParams.get('site')
+
+      function filter(content, keyword) {
+        if (!!keyword) {
+          if (content !== '' && content.toLowerCase().includes(keyword)) {
+            return content
+          } else {
+            return ''
+          }
+        }
+        return content
+      }
 
       function draw_graphic(data, markers) {
         MG.data_graphic({
@@ -46,9 +58,9 @@
         for (var i = 0; i < data.length; i++) {
           dateobj = new Date(data[i].Date)
           let news = data[i].News
-          if (!!qvalue) {
-            if (data[i].News !== '' && data[i].News.toLowerCase().includes(qvalue)) {
-              news = data[i].News
+          news = filter(news, qvalue)
+          if (!!siteValue) {
+            if (data[i].url !== '' && data[i].url.toLowerCase().includes(siteValue)) {
             } else {
               news = ''
             }
