@@ -14,21 +14,7 @@
   <body>
     <div id="crypto-news-plot"></div>
     <script>
-      d3.csv('data/1year_btcusd_annotated.csv', function(data) {
-        // data = MG.convert.date(data, 'Date', "%b %d, %Y")
-        // Remove thousand separators
-        newData = []
-        markers = []
-        for (var i = 0; i < data.length; i++) {
-          dateobj = new Date(data[i].Date)
-          content = {'Date': dateobj, 'Datestr': data[i].Date, 'Price': parseFloat(data[i].Close), 'News': data[i].News}
-          newData.push(content)
-          if (data[i].News !== "") {
-            markers.push({'Date': dateobj, 'label': ''})//i.toString()})
-            //markers.push({'Date': dateobj, 'label': i.toString()})
-          }
-        }
-        data = newData
+      function draw_graphic(data, markers) {
         MG.data_graphic({
           title: "Annotated BTC price plot",
           description: "Title says it all",
@@ -47,7 +33,29 @@
               .text(d.News + ' ' + d.Datestr + ' ' + d.Price);
           }
         })
+      }
+      markers = []
+      newData = []
+      d3.csv('data/1year_btcusd_annotated.csv', function(data) {
+        // data = MG.convert.date(data, 'Date', "%b %d, %Y")
+        // Remove thousand separators
+        for (var i = 0; i < data.length; i++) {
+          dateobj = new Date(data[i].Date)
+          content = {'Date': dateobj, 'Datestr': data[i].Date, 'Price': parseFloat(data[i].Close), 'News': data[i].News}
+          newData.push(content)
+          if (data[i].News !== "") {
+            markers.push({'Date': dateobj, 'label': ''})//i.toString()})
+            //markers.push({'Date': dateobj, 'label': i.toString()})
+          }
+        }
+        draw_graphic(newData, markers)
       })
+
+      function modify() {
+        markers = markers.slice(1, 3)
+        draw_graphic(newData, markers)
+      }
     </script>
+    <!--<button id="modify" type="button" onclick="modify()">Click Me!</button>-->
   </body>
 </html>
