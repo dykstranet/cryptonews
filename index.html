@@ -47,8 +47,11 @@
           brush: 'xy',
           markers: markers,
           mouseover: function (d, i) {
+            if (d.News === '') {
+                return
+            }
             d3.select('#crypto-news-plot svg .mg-active-datapoint')
-              .text(d.News + ' ' + d.Datestr + ' ' + d.Price);
+              .text(d.News + ' ' + d.Datestr + ' ' + d.Price)
           }
         })
       }
