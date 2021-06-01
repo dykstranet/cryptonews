@@ -52,6 +52,7 @@
             }
             d3.select('#crypto-news-plot svg .mg-active-datapoint')
               .text(d.News + ' ' + d.Datestr + ' ' + d.Price)
+            d3.selectAll('.mg-line1').on('click', () => window.open(d.url))
           }
         })
       }
@@ -70,7 +71,13 @@
               news = ''
             }
           }
-          content = {'Date': dateobj, 'Datestr': data[i].Date, 'Price': parseFloat(data[i].Close), 'News': news}
+          content = {
+            'Date': dateobj,
+            'Datestr': data[i].Date,
+            'Price': parseFloat(data[i].Close),
+            'News': news,
+            'url': data[i].url
+          }
           newData.push(content)
           if (news !== "") {
             markers.push({'Date': dateobj, 'label': ''})//i.toString()})
