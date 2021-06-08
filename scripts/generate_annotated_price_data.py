@@ -5,12 +5,12 @@ import investpy
 
 today = datetime.datetime.today()
 today_str = today.strftime('%d/%m/%Y')
-a_year_ago = today - datetime.timedelta(days=365)
-a_year_ago_str = a_year_ago.strftime('%d/%m/%Y')
+n_months_ago = today - datetime.timedelta(days=182)
+n_months_ago_str = n_months_ago.strftime('%d/%m/%Y')
 
 data = investpy.get_crypto_historical_data(
     crypto='bitcoin',
-    from_date=a_year_ago_str,
+    from_date=n_months_ago_str,
     to_date=today_str)
 
 data.to_csv('data/1year_btcusd.csv')
