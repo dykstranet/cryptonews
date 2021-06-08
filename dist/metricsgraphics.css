@@ -1,6 +1,6 @@
 .mg-active-datapoint {
     fill: black;
-    font-size: 0.9rem;
+    font-size: 2.0rem;  /* modified for cryptonews */
     font-weight: 400;
     opacity: 0.8;
 }
