@@ -1,26 +1,33 @@
-2020-03-03,N/A,"(Roughly) COVID-19 Spread Hit Global Markets"
-2020-05-11,https://www.coindesk.com/bitcoin-halving-arrives-mining-rewards-drop-for-third-time-in-history,"3rd Halving"
-2020-10-15,https://github.com/bitcoin/bitcoin/pull/19953,"Taproot PR Merged"
-2020-10-21,https://newsroom.paypal-corp.com/2020-10-21-PayPal-Launches-New-Service-Enabling-Users-to-Buy-Hold-and-Sell-Cryptocurrency,"PayPal Allowed Crypto Spending"
-2021-02-23,https://news.bitcoin.com/bitfinex-and-tether-fined-18-5m-in-settlement-with-ny-attorney-general-both-firms-barred-from-trading-in-the-city,"Tether Settlement"
-2021-03-01,https://www.scmp.com/economy/china-economy/article/3123633/bitcoin-mining-northern-chinese-province-be-halted-amid,"Chinese Mining Halted"
-2021-03-02,https://www.btctimes.com/news/Goldman-Sachs-considers-Bitcoin-ETF-offers-futures,"GS Restarts BTC Trading Desk"
-2021-02-13,https://www.btctimes.com/news/twitter-ceo-jack-dorsey-and-jay-z-announce-bitcoin-fund,"Jack & JayZ Announce BTrust"
-2021-02-08,https://www.cnbc.com/2021/02/08/tesla-buys-1point5-billion-in-bitcoin.html,"Tesla buys BTC"
-2021-02-24,https://twitter.com/OPeters18/status/1364364373913862148,"Largest BTC Investment Dubai"
+2020-02-20,https://en.wikipedia.org/wiki/2020_stock_market_crash,(Roughly) COVID-19 Spread Hit Global Markets
+2020-05-11,https://www.coindesk.com/bitcoin-halving-arrives-mining-rewards-drop-for-third-time-in-history,BTC 3rd Halving
+2020-10-15,https://github.com/bitcoin/bitcoin/pull/19953,Taproot Pull Req Merged
+2020-10-21,https://newsroom.paypal-corp.com/2020-10-21-PayPal-Launches-New-Service-Enabling-Users-to-Buy-Hold-and-Sell-Cryptocurrency,PayPal Allowed Crypto Spending
+2021-02-08,https://www.cnbc.com/2021/02/08/tesla-buys-1point5-billion-in-bitcoin.html,Tesla buys BTC
+2021-02-13,https://www.btctimes.com/news/twitter-ceo-jack-dorsey-and-jay-z-announce-bitcoin-fund,Jack & JayZ Announce BTrust
+2021-02-23,https://news.bitcoin.com/bitfinex-and-tether-fined-18-5m-in-settlement-with-ny-attorney-general-both-firms-barred-from-trading-in-the-city,Tether Settlement
+2021-02-24,https://twitter.com/OPeters18/status/1364364373913862148,Largest BTC Investment Dubai
 2021-02-25,https://www.coindesk.com/coinbase-sec-form-s-1,"Coinbase Files S-1, Going Public"
-2021-03-11,https://techcrunch.com/2021/03/11/blockfi-lands-a-350m-series-d-at-3b-valuation-for-its-fast-growing-crypto-lending-platform/,"Blockfi Valued at $3B"
-2021-03-10,https://www.coindesk.com/jpmorgan-to-launch-cryptocurrency-exposure-basket-of-bitcoin-proxy-stocks,"JP Morgan Launches Crypto-Basket Fund"
-2021-03-29,https://www.businesswire.com/news/home/20210329005171/en/Visa-Becomes-First-Major-Payments-Network-to-Settle-Transactions-in-USD-Coin-USDC,"Visa Integrates USDC"
-2021-04-08,https://www.coindesk.com/bloomberg-bitcoin-400k-prediction,"Bloomberg Predicts 400k BTC in 2021"
+2021-03-01,https://www.scmp.com/economy/china-economy/article/3123633/bitcoin-mining-northern-chinese-province-be-halted-amid,Chinese Mining Halted
+2021-03-02,https://www.btctimes.com/news/Goldman-Sachs-considers-Bitcoin-ETF-offers-futures,GS Restarts BTC Trading Desk
+2021-03-10,https://www.coindesk.com/jpmorgan-to-launch-cryptocurrency-exposure-basket-of-bitcoin-proxy-stocks,JP Morgan Launches Crypto-Basket Fund
+2021-03-11,https://techcrunch.com/2021/03/11/blockfi-lands-a-350m-series-d-at-3b-valuation-for-its-fast-growing-crypto-lending-platform/,Blockfi Valued at $3B
+2021-03-29,https://www.businesswire.com/news/home/20210329005171/en/Visa-Becomes-First-Major-Payments-Network-to-Settle-Transactions-in-USD-Coin-USDC,Visa Integrates USDC
 2021-04-06,https://www.wsj.com/articles/fidelity-square-coinbase-launch-bitcoin-trade-group-11617710402,"Fidelity, Square, Coinbase Launch BTC Trade Group"
-2021-04-18,https://www.btctimes.com/news/turkey-bans-bitcoin-payments-amid-currency-crisis,"Turkey Bans BTC Payments"
-2021-04-19,https://twitter.com/woonomic/status/1383978423563870209,"Xinjiang Chinese Miners Go Offline"
-2021-04-26,https://www.bloomberg.com/news/articles/2021-04-26/musk-tesla-sold-bitcoin-to-prove-liquidity-as-cash-alternative,"Tesla Sells 10% of Its BTC Holdings"
-2021-05-19,https://www.reuters.com/technology/chinese-financial-payment-bodies-barred-cryptocurrency-business-2021-05-18/,"China Bans BTC Payments"
-2021-05-08,https://www.cnbc.com/2021/05/08/dogecoin-price-plummets-as-elon-musk-hosts-saturday-night-live-.html,"Musk Hosts SNL"
-2021-05-13,https://twitter.com/elonmusk/status/1392602041025843203,"Tesla Halts Vehicle Purchase with BTC"
-2021-05-20,https://www.federalreserve.gov/newsevents/pressreleases/other20210520b.htm,"Feds Powell Outlines CBDC Plans"
-2021-06-09,https://www.scmp.com/tech/tech-trends/article/3136515/china-plans-accelerate-blockchain-development-and-adoption-push,"China Promotes Blockchain Development"
-2021-05-21,https://cryptonews.com.au/china-s-state-council-calls-for-crackdown-on-bitcoin-trading-and-mining,"China Crackdown on BTC Trading and Mining"
-2021-05-26,https://www.cnbc.com/2021/05/26/major-china-bitcoin-mining-hub-lays-out-harsher-crackdown-measures.html,"China's Inner Mongolia curbs BTC Mining"
+2021-04-08,https://www.coindesk.com/bloomberg-bitcoin-400k-prediction,Bloomberg Predicts 400k BTC in 2021
+2021-04-18,https://www.btctimes.com/news/turkey-bans-bitcoin-payments-amid-currency-crisis,Turkey Bans BTC Payments
+2021-04-19,https://twitter.com/woonomic/status/1383978423563870209,Xinjiang Chinese Miners Go Offline
+2021-04-26,https://www.bloomberg.com/news/articles/2021-04-26/musk-tesla-sold-bitcoin-to-prove-liquidity-as-cash-alternative,Tesla Sells 10% of Its BTC Holdings
+2021-05-08,https://www.cnbc.com/2021/05/08/dogecoin-price-plummets-as-elon-musk-hosts-saturday-night-live-.html,Musk Hosts SNL
+2021-05-13,https://twitter.com/elonmusk/status/1392602041025843203,Tesla Halts Vehicle Purchase with BTC
+2021-05-19,https://www.reuters.com/technology/chinese-financial-payment-bodies-barred-cryptocurrency-business-2021-05-18/,China Bans BTC Payments
+2021-05-20,https://www.federalreserve.gov/newsevents/pressreleases/other20210520b.htm,Feds Powell Outlines CBDC Plans
+2021-05-21,https://cryptonews.com.au/china-s-state-council-calls-for-crackdown-on-bitcoin-trading-and-mining,China Crackdown on BTC Trading and Mining
+2021-05-26,https://www.cnbc.com/2021/05/26/major-china-bitcoin-mining-hub-lays-out-harsher-crackdown-measures.html,China's Inner Mongolia curbs BTC Mining
+2021-06-06,https://www.bloomberg.com/news/articles/2021-06-05/bitcoin-falls-as-weibo-appears-to-suspend-some-crypto-accounts,China Weibo blocks Crypto Influencer Accounts
+2021-06-06,https://www.theblockcrypto.com/linked/107381/el-salvador-bitcoin-legal-tender,El Salvador Proposes Bitcoin Legal Tender Law
+2021-06-08,https://www.cnbc.com/2021/06/09/el-salvador-proposes-law-to-make-bitcoin-legal-tender.html,El Salvador adops BTC as Legal Tender
+2021-06-09,https://www.scmp.com/tech/tech-trends/article/3136515/china-plans-accelerate-blockchain-development-and-adoption-push,China Promotes Blockchain Development
+2021-06-13,https://decrypt.co/73375/confirmed-china-orders-yunnans-bitcoin-miners-to-cease-operating-by-end-of-june,China Yunan Bans BTC Mining
+2021-06-19,https://www.reuters.com/technology/chinas-cryptocurrency-mining-crackdown-spreads-sichuan-2021-06-19/,China Sichuan Province Crackdown
+2021-06-25,https://finance.yahoo.com/news/el-salvador-reveals-official-bitcoin-064414265.html,El Salvador BTC Airdrop
+2021-06-25,https://finance.yahoo.com/news/el-salvador-reveals-official-bitcoin-064414265.html,El Salvador BTC Airdrop
