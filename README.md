@@ -2,12 +2,12 @@
 This is a project that collects significant, price effecting news items. 
 See https://dykstranet.github.io/cryptonews/.
 
-New item suggestions are welcome through pull requests on `data/news.csv`
+News item suggestions are welcome through pull requests on `./data/news.csv`
 
 To update the annotated data and automatically push to origin, do
 `./scripts/automate.sh`.
 
 ## Usage
-- To filter the news content by a keyword, do e.g. https://dykstranet.github.io/cryptonews/?q=cbdc.
-- To filter the news url by a keyword, do e.g. https://dykstranet.github.io/cryptonews/?site=coindesk.
-- To open the URL associated with a news, click on the vertical dashed line of the event.
+- To filter news content by keyword(s), do e.g. https://dykstranet.github.io/cryptonews/?q=cbdc china
+- To filter new url by website, do e.g. https://dykstranet.github.io/cryptonews/?site=coindesk
+- To open the URL associated with a news item, click on the vertical dashed line
