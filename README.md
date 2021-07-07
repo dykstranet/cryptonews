@@ -2,6 +2,8 @@
 This is a project that collects significant, price effecting news items. 
 See https://dykstranet.github.io/cryptonews/.
 
+New item suggestions are welcome through pull requests on `data/news.csv`
+
 To update the annotated data and automatically push to origin, do
 `./scripts/automate.sh`.
 
