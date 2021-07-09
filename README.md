@@ -1,8 +1,15 @@
 # Cryptonews
-This is a project that collects significant, price effecting news items. 
-See https://dykstranet.github.io/cryptonews/.
+This is a project that collects significant, Bitcoin price effecting news items. 
 
-News item suggestions are welcome through pull requests on `./data/news.csv`
+See demonstration at `https://dykstranet.github.io/cryptonews/`
+
+News item suggestions are welcome through pull requests and are based on following criteria:
+
+- URL is from an established, reputable source (Use your discretion)
+- News item is likely to have an effect on Bitcoin price
+- Date represents the event occurance, not publishing date. 
+
+Please contribute news itmes in file `./data/news.csv`
 
 To update the annotated data and automatically push to origin, do
 `./scripts/automate.sh`.
