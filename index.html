@@ -1,91 +1,11 @@
 <html>
   <head>
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
-    <link href='https://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css' rel='stylesheet' type='text/css'>
-    <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
-    <link href='dist/metricsgraphics.css' rel='stylesheet' type='text/css'>
-    <!--<link href='examples/css/metricsgraphics-demo.css' rel='stylesheet' type='text/css'>-->
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
-    <script src="https://d3js.org/d3.v4.min.js"></script>
-    <!--<script src="examples/js/lib/ace.js" charset="utf-8"></script>-->
-    <script src='dist/metricsgraphics.js'></script>
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <!--<script src='https://cdn.plot.ly/plotly-2.3.0.min.js'></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/2.3.1/plotly.min.js" integrity="sha512-Wxp+ZFyiVaCvGlFFlj5NMY6hmzGBnasVpNnkOLX35DsaCRi5hn0PjTIz20mCkGHI+czPfM9E0jTlbq3FtjYSDA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   </head>
   <body>
     <div id="crypto-news-plot"></div>
-    <script>
-      const queryString = window.location.search
-      const urlParams = new URLSearchParams(queryString)
-      const qvalue = urlParams.get('q')
-      const siteValue = urlParams.get('site')
-
-      function filter(content, keyword) {
-        if (!!keyword) {
-          const kwList = keyword.split(' ')
-          const contentLower = content.toLowerCase()
-          if (content !== '' && kwList.some(k => contentLower.includes(k))) {
-            return content
-          } else {
-            return ''
-          }
-        }
-        return content
-      }
-
-      function draw_graphic(data, markers) {
-        MG.data_graphic({
-          title: "Annotated BTC price plot",
-          description: "Title says it all",
-          data: data,
-          top: 70,
-          width: 1200,
-          height: 600,
-          right: 40,
-          target: '#crypto-news-plot',
-          x_accessor: 'Date',
-          y_accessor: 'Price',
-          brush: 'xy',
-          markers: markers,
-          mouseover: function (d, i) {
-            if (d.News === '') {
-                return
-            }
-            d3.select('#crypto-news-plot svg .mg-active-datapoint')
-              .text(d.News + ' ' + d.Datestr + ' ' + d.Price)
-            d3.selectAll('.mg-line1').on('click', () => window.open(d.url))
-          }
-        })
-      }
-      markers = []
-      newData = []
-      d3.csv('data/1year_btcusd_annotated.csv', function(data) {
-        // data = MG.convert.date(data, 'Date', "%b %d, %Y")
-        // Remove thousand separators
-        for (var i = 0; i < data.length; i++) {
-          dateobj = new Date(data[i].Date)
-          let news = data[i].News
-          news = filter(news, qvalue)
-          if (!!siteValue) {
-            if (data[i].url !== '' && data[i].url.toLowerCase().includes(siteValue)) {
-            } else {
-              news = ''
-            }
-          }
-          content = {
-            'Date': dateobj,
-            'Datestr': data[i].Date,
-            'Price': parseFloat(data[i].Close),
-            'News': news,
-            'url': data[i].url
-          }
-          newData.push(content)
-          if (news !== "") {
-            markers.push({'Date': dateobj, 'label': ''})//i.toString()})
-            //markers.push({'Date': dateobj, 'label': i.toString()})
-          }
-        }
-        draw_graphic(newData, markers)
-      })
-    </script>
+    <script src='main.js'></script>
   </body>
 </html>
