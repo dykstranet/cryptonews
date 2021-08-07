@@ -23,6 +23,7 @@ let layout = {
   },
   hovermode: 'x',
   height: 600,
+  hoverlabel: {font: {size: 16}},
 }
 
 let clickableUrls = []
