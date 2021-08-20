@@ -16,9 +16,29 @@ function filter(content, keyword) {
   return content
 }
 
+// TODO UGH can't select a default button yet
+// https://github.com/plotly/plotly.js/issues/4709
+const selectorOptions = {
+    buttons: [{
+        step: 'month',
+        stepmode: 'backward',
+        count: 6,
+        label: '6m',
+        active: true
+    }, {
+        step: 'year',
+        stepmode: 'backward',
+        count: 1,
+        label: '1y'
+    }, {
+        step: 'all',
+    }],
+}
+
 let layout = {
   title: 'Annotated BTC price plot',
   xaxis: {
+    rangeselector: selectorOptions,
     rangeslider: {}
   },
   hovermode: 'x',
@@ -66,6 +86,14 @@ function processData(allRows) {
 
   // Put in the vertical lines into layout
   layout.shapes = verticalLines
+
+  // Manually set the range to be the last 6 months.
+  // See the GH issue just before the selectorOptions
+  // declaration.
+  const lastDate = x[x.length - 1]
+  const sixMonthAgo = new Date(lastDate)
+  sixMonthAgo.setMonth(sixMonthAgo.getMonth() - 6)
+  layout.xaxis.range = [sixMonthAgo, lastDate]
 
   let trace = {
     x: x,
