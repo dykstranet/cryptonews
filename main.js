@@ -118,6 +118,6 @@ function processData(allRows) {
   })
 }
 
-d3.csv('data/1year_btcusd_annotated.csv', function(data) {
+d3.csv('data/btcusd_annotated.csv', function(data) {
   processData(data)
 })
