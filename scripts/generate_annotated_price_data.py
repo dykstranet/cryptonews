@@ -5,7 +5,7 @@ import investpy
 
 today = datetime.datetime.today()
 today_str = today.strftime('%d/%m/%Y')
-n_months_ago = today - datetime.timedelta(days=182)
+n_months_ago = today - datetime.timedelta(days=(365 * 2))
 n_months_ago_str = n_months_ago.strftime('%d/%m/%Y')
 
 data = investpy.get_crypto_historical_data(
@@ -19,9 +19,9 @@ with open('data/1year_btcusd_annotated.csv', 'w') as f1:
     annotated = csv.writer(f1)
     f2 = open('data/1year_btcusd.csv', 'r')
     btcusd = csv.reader(f2)
+    head = next(btcusd)  # We don't need this
 
-    head = next(btcusd)
-    annotated.writerow(head + ['News', 'url'])
+    annotated.writerow(['Date', 'Close', 'News', 'url'])
 
     news = {}
     urls = {}
@@ -35,6 +35,8 @@ with open('data/1year_btcusd_annotated.csv', 'w') as f1:
     populate_news_and_urls('data/news.csv')
 
     for row in btcusd:
-        annotated_row = row + [news.get(row[0], ""), urls.get(row[0], "")]
+        date = row[0]
+        close = row[4]
+        annotated_row = [date, close, news.get(date, ""), urls.get(date, "")]
         annotated.writerow(annotated_row)
     f2.close()
