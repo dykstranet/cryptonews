@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -e
+
 echo "Getting latest news..."
 git pull
 echo "Sorting news..."
