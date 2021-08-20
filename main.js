@@ -16,6 +16,22 @@ function filter(content, keyword) {
   return content
 }
 
+// Mapping to rescale maximum of yaxis by year
+const ATHs = {
+  '2010': 0.4 * 1.05,
+  '2011': 29.6 * 1.05,
+  '2012': 29.6 * 1.05,
+  '2013': 1237.6 * 1.05,
+  '2014': 1237.6 * 1.05,
+  '2015': 1237.6 * 1.05,
+  '2016': 1237.6 * 1.05,
+  '2017': 19345.5 * 1.05,
+  '2018': 19345.5 * 1.05,
+  '2019': 19345.5 * 1.05,
+  '2020': 28949.4 * 1.05,
+  '2021': 70000,
+}
+
 // TODO UGH can't select a default button yet
 // https://github.com/plotly/plotly.js/issues/4709
 const selectorOptions = {
@@ -40,6 +56,9 @@ let layout = {
   xaxis: {
     rangeselector: selectorOptions,
     rangeslider: {}
+  },
+  yaxis: {
+    fixedrange: false,
   },
   hovermode: 'x',
   height: 600,
@@ -108,13 +127,27 @@ function processData(allRows) {
   Plotly.newPlot('crypto-news-plot', data, layout, {displayModeBar: true})
 
   // Register click events and open the news article in a new tab.
-  document.getElementById('crypto-news-plot').on('plotly_click', function(data) {
+  const cryptoNewsPlot = document.getElementById('crypto-news-plot')
+  cryptoNewsPlot.on('plotly_click', function(data) {
     if (!!data.points) {
       const url = clickableUrls[data.points[0].pointIndex]
       if (!!url) {
         window.open(url)
       }
     }
+  })
+
+  // There is no an easy way to auto-rescale the y axis upon x axis sliding:
+  // https://github.com/plotly/plotly.js/issues/1876
+  // So this event handler is a hack as first described in
+  // https://community.plotly.com/t/y-axis-autoscaling-with-x-range-sliders/10245/7
+  cryptoNewsPlot.on('plotly_relayout', function(update) {
+    if (!update['xaxis.range']) {
+      return
+    }
+    const rightSide = update['xaxis.range'][1]
+    const rightYear = rightSide.split('-')[0]
+    Plotly.relayout(cryptoNewsPlot, 'yaxis.range', [0, ATHs[rightYear]])
   })
 }
 
