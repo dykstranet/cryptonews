@@ -23,6 +23,7 @@ def load_early_data():
         to_date=f'31/12/{last_year}')
     ed = ed.drop(columns=unused_columns)
     ed.to_csv(csv_early_filename)
+    # This is so that the Date index becomes a column.
     ed = ed.reset_index(level=0)
     ed.Date = ed.Date.dt.strftime('%Y-%m-%d')
     return ed
