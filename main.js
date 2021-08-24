@@ -4,6 +4,7 @@ const qvalue = urlParams.get('q')
 const siteValue = urlParams.get('site')
 
 function filter(content, keyword) {
+  // Filter news content based on keyword
   if (!!keyword) {
     const kwList = keyword.split(' ')
     const contentLower = content.toLowerCase()
@@ -67,10 +68,40 @@ let layout = {
 
 let clickableUrls = []
 
+function getYear(dateStr) {
+  return dateStr.split('-')[0]
+}
+
+function renderNewsList(data) {
+  const cryptoNewsList = document.getElementById('crypto-news-list')
+
+  for (const [yr, entries] of Object.entries(data)) {
+    const yearItem = document.createElement('li')
+    const ul = document.createElement('ul')
+    for (const entry of entries) {
+      const dayItem = document.createElement('li')
+      dayItem.innerHTML = entry
+      ul.appendChild(dayItem)
+    }
+    yearItem.innerHTML = yr
+    yearItem.appendChild(ul)
+    cryptoNewsList.appendChild(yearItem)
+  }
+}
+
 function processData(allRows) {
+  // For crypto-news-plot
   const x = [], y = [], texts = []
   const verticalLines = []
-  for (var i=0; i < allRows.length; i++) {
+
+  // For crypto-news-list
+  const newsDict = {}
+  // We obtain the years from the all time high hash table.
+  for (let year in ATHs) {
+    newsDict[year] = []
+  }
+
+  for (let i = 0; i < allRows.length; i++) {
     row = allRows[i]
     x.push(row.Date)
     y.push(row.Close)
@@ -100,6 +131,8 @@ function processData(allRows) {
           width: 1,
         }
       })
+      const yr = getYear(row.Date)
+      newsDict[yr].push(row.Date + ': ' + news)
     }
   }
 
@@ -146,9 +179,11 @@ function processData(allRows) {
       return
     }
     const rightSide = update['xaxis.range'][1]
-    const rightYear = rightSide.split('-')[0]
+    const rightYear = getYear(rightSide)
     Plotly.relayout(cryptoNewsPlot, 'yaxis.range', [0, ATHs[rightYear]])
   })
+
+  renderNewsList(newsDict)
 }
 
 d3.csv('data/btcusd_annotated.csv', function(data) {
