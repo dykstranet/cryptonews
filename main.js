@@ -1,9 +1,10 @@
-const queryString = window.location.search
-const urlParams = new URLSearchParams(queryString)
+const hashString = window.location.hash
+const urlParams = new URLSearchParams(hashString.replace('#', '?'))
 const qvalue = urlParams.get('q')
 const siteValue = urlParams.get('site')
+console.log(hashString)
 
-function filter(content, keyword) {
+function filterNews(content, keyword) {
   // Filter news content based on keyword
   if (!!keyword) {
     const kwList = keyword.split(' ')
@@ -68,6 +69,8 @@ let layout = {
 
 let clickableUrls = []
 
+const allUnfilteredNews = []
+
 function getYear(dateStr) {
   return dateStr.split('-')[0]
 }
@@ -101,12 +104,25 @@ function renderNewsList(data) {
   }
 }
 
+function updateNewsNumber(searchText, n) {
+  // Display the number of news
+  const extraText = !!qvalue ? `for '${qvalue}'` : ''
+  document.getElementById('news-number').innerHTML = `${n} news displayed ${extraText}`
+}
+
 function handleSearch() {
   const form = document.getElementById('cryptonews-form-search')
+  const cryptoNewsPlot = document.getElementById('crypto-news-plot')
   form.addEventListener('submit', event => {
     event.preventDefault()
+    if (allUnfilteredNews.length === 0) return
     const searchText = form.elements['cryptonews-form-search-content'].value
-    window.location.search = `q=${searchText}`
+    window.location.hash = `q=${searchText}`
+    const update = {
+      shapes: allUnfilteredNews.filter(e => filterNews(e.news, searchText) !== '')
+    }
+    updateNewsNumber(searchText, update.shapes.length)
+    Plotly.relayout(cryptoNewsPlot, update)
   })
 }
 
@@ -129,7 +145,8 @@ function processData(allRows) {
     clickableUrls.push(row.url)
 
     let news = row.News
-    news = filter(news, qvalue)
+    const unfilteredNews = news
+    news = filterNews(news, qvalue)
 
     if (!!siteValue) {
       if (row.url !== '' && row.url.toLowerCase().includes(siteValue)) {
@@ -139,8 +156,8 @@ function processData(allRows) {
     }
 
     texts.push(news)
-    if (!!news) {
-      verticalLines.push({
+    if (!!unfilteredNews) {
+      const verticalLine = {
         type: 'line',
         x0: row.Date,
         y0: 0,
@@ -150,15 +167,20 @@ function processData(allRows) {
           color: 'rgb(105, 105, 105)',
           dash: 'dot',
           width: 1,
-        }
-      })
-      const yr = getYear(row.Date)
-      newsDict[yr].push({
-        // The substring is used to remove the year from the date.
-        // We know that the year is always 4-chars length
-        content: row.Date.substring(5) + ': ' + news,
-        url: row.url
-      })
+        },
+        news: unfilteredNews,
+      }
+      allUnfilteredNews.push(verticalLine)
+      if (!!news) {
+        verticalLines.push(verticalLine)
+        const yr = getYear(row.Date)
+        newsDict[yr].push({
+          // The substring is used to remove the year from the date.
+          // We know that the year is always 4-chars length
+          content: row.Date.substring(5) + ': ' + news,
+          url: row.url
+        })
+      }
     }
   }
 
@@ -166,8 +188,7 @@ function processData(allRows) {
   layout.shapes = verticalLines
 
   // Display the number of news
-  const extraText = !!qvalue ? `for '${qvalue}'` : ''
-  document.getElementById('news-number').innerHTML = `${verticalLines.length} news displayed ${extraText}`
+  updateNewsNumber(qvalue, verticalLines.length)
 
   // Manually set the range to be the last 6 months.
   // See the GH issue just before the selectorOptions
