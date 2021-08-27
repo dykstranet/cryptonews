@@ -106,7 +106,7 @@ function renderNewsList(data) {
 
 function updateNewsNumber(searchText, n) {
   // Display the number of news
-  const extraText = !!qvalue ? `for '${qvalue}'` : ''
+  const extraText = !!searchText ? `for '${searchText}'` : ''
   document.getElementById('news-number').innerHTML = `${n} news displayed ${extraText}`
 }
 
