@@ -144,7 +144,9 @@ function processData(allRows) {
       })
       const yr = getYear(row.Date)
       newsDict[yr].push({
-        content: row.Date + ': ' + news,
+        // The substring is used to remove the year from the date.
+        // We know that the year is always 4-chars length
+        content: row.Date.substring(5) + ': ' + news,
         url: row.url
       })
     }
