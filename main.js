@@ -2,7 +2,6 @@ const hashString = window.location.hash
 const urlParams = new URLSearchParams(hashString.replace('#', '?'))
 const qvalue = urlParams.get('q')
 const siteValue = urlParams.get('site')
-console.log(hashString)
 
 function filterNews(content, keyword) {
   // Filter news content based on keyword
@@ -124,7 +123,15 @@ function handleSearch() {
       shapes: allUnfilteredNews.filter(e => filterNews(e.news, searchText) !== '')
     }
     updateNewsNumber(searchText, update.shapes)
+    // Update vertical lines
     Plotly.relayout(cryptoNewsPlot, update)
+    // Update hover texts
+    const texts = Array(totalDays).fill('')
+    for (let i = 0; i < update.shapes.length; i++) {
+      const el = update.shapes[i]
+      texts[el.idx] = el.news
+    }
+    Plotly.restyle(cryptoNewsPlot, {text: [texts]})
   })
 }
 
@@ -171,6 +178,7 @@ function processData(allRows) {
           width: 1,
         },
         news: unfilteredNews,
+        idx: i,
       }
       allUnfilteredNews.push(verticalLine)
       if (!!news) {
@@ -240,7 +248,9 @@ function processData(allRows) {
 }
 
 // Main steps
+let totalDays = 0
 d3.csv('data/btcusd_annotated.csv', function(data) {
+  totalDays = data.length
   processData(data)
 })
 handleSearch()
