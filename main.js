@@ -100,6 +100,15 @@ function renderNewsList(data) {
   }
 }
 
+function handleSearch() {
+  const form = document.getElementById('cryptonews-form-search')
+  form.addEventListener('submit', event => {
+    event.preventDefault()
+    const searchText = form.elements['cryptonews-form-search-content'].value
+    window.location.search = `q=${searchText}`
+  })
+}
+
 function processData(allRows) {
   // For crypto-news-plot
   const x = [], y = [], texts = []
@@ -155,6 +164,9 @@ function processData(allRows) {
   // Put in the vertical lines into layout
   layout.shapes = verticalLines
 
+  // Display the number of news
+  document.getElementById('news-number').innerHTML = `${verticalLines.length} news displayed`
+
   // Manually set the range to be the last 6 months.
   // See the GH issue just before the selectorOptions
   // declaration.
@@ -202,6 +214,8 @@ function processData(allRows) {
   renderNewsList(newsDict)
 }
 
+// Main steps
 d3.csv('data/btcusd_annotated.csv', function(data) {
   processData(data)
 })
+handleSearch()
