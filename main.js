@@ -72,6 +72,15 @@ function getYear(dateStr) {
   return dateStr.split('-')[0]
 }
 
+function makeExternalLink(url) {
+  // Used in crypto news list
+  const link = document.createElement('a')
+  link.href = url
+  link.target ='_blank'
+  link.innerHTML = '<i class="fa fa-external-link"></i>'
+  return link
+}
+
 function renderNewsList(data) {
   const cryptoNewsList = document.getElementById('crypto-news-list')
 
@@ -80,7 +89,9 @@ function renderNewsList(data) {
     const ul = document.createElement('ul')
     for (const entry of entries) {
       const dayItem = document.createElement('li')
-      dayItem.innerHTML = entry
+      dayItem.innerHTML = entry.content + ' '
+      const link = makeExternalLink(entry.url)
+      dayItem.appendChild(link)
       ul.appendChild(dayItem)
     }
     yearItem.innerHTML = yr
@@ -132,7 +143,10 @@ function processData(allRows) {
         }
       })
       const yr = getYear(row.Date)
-      newsDict[yr].push(row.Date + ': ' + news)
+      newsDict[yr].push({
+        content: row.Date + ': ' + news,
+        url: row.url
+      })
     }
   }
 
