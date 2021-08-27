@@ -9,7 +9,11 @@ with open('data/news.csv', 'r') as f:
         rows.append(row)
 
 def get_row_key(row):
-	return datetime.datetime.strptime(row[0],"%Y-%m-%d")
+    try:
+        return datetime.datetime.strptime(row[0],"%Y-%m-%d")
+    except Exception:
+        print("Error: Your date is misformatted")
+        exit(1)
 
 rows.sort(key=get_row_key)
 
