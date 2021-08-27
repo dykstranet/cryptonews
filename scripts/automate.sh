@@ -9,7 +9,7 @@ echo "Sorting news..."
 echo "Generating graph..."
 ./scripts/generate_annotated_price_data.py
 echo "Pushing to git..."
-git add data/1year_btcusd_annotated.csv
+git add data/btcusd_annotated.csv
 git add data/news.csv
 git commit -m 'Update annotated price data'
 git push
