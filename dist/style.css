@@ -1,0 +1,7 @@
+form#cryptonews-form-search {
+  display: inline;
+}
+
+form#cryptonews-form-search button {
+  cursor: pointer;
+}
