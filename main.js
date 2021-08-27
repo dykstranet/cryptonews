@@ -165,7 +165,8 @@ function processData(allRows) {
   layout.shapes = verticalLines
 
   // Display the number of news
-  document.getElementById('news-number').innerHTML = `${verticalLines.length} news displayed`
+  const extraText = !!qvalue ? `for '${qvalue}'` : ''
+  document.getElementById('news-number').innerHTML = `${verticalLines.length} news displayed ${extraText}`
 
   // Manually set the range to be the last 6 months.
   // See the GH issue just before the selectorOptions
