@@ -85,6 +85,7 @@ function renderNewsList(data) {
   const cryptoNewsList = document.getElementById('crypto-news-list')
 
   for (const [yr, entries] of Object.entries(data)) {
+    if (entries.length === 0) continue
     const yearItem = document.createElement('li')
     const ul = document.createElement('ul')
     for (const entry of entries) {
