@@ -104,10 +104,12 @@ function renderNewsList(data) {
   }
 }
 
-function updateNewsNumber(searchText, n) {
+function updateNewsNumber(searchText, newsItems) {
   // Display the number of news
-  const extraText = !!searchText ? `for '${searchText}'` : ''
-  document.getElementById('news-number').innerHTML = `${n} news displayed ${extraText}`
+  const n = newsItems.length
+  const fromTo = n === 0 ? '' : ` from ${newsItems[0].x0} to ${newsItems[n - 1].x0}`
+  const extraText = !!searchText ? ` for '${searchText}'${fromTo}` : ''
+  document.getElementById('news-number').innerHTML = `${n} news displayed${extraText}.`
 }
 
 function handleSearch() {
@@ -121,7 +123,7 @@ function handleSearch() {
     const update = {
       shapes: allUnfilteredNews.filter(e => filterNews(e.news, searchText) !== '')
     }
-    updateNewsNumber(searchText, update.shapes.length)
+    updateNewsNumber(searchText, update.shapes)
     Plotly.relayout(cryptoNewsPlot, update)
   })
 }
@@ -188,7 +190,7 @@ function processData(allRows) {
   layout.shapes = verticalLines
 
   // Display the number of news
-  updateNewsNumber(qvalue, verticalLines.length)
+  updateNewsNumber(qvalue, verticalLines)
 
   // Manually set the range to be the last 6 months.
   // See the GH issue just before the selectorOptions
