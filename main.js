@@ -108,7 +108,7 @@ function updateNewsNumber(searchText, newsItems) {
   const n = newsItems.length
   const fromTo = n === 0 ? '' : ` from ${newsItems[0].x0} to ${newsItems[n - 1].x0}`
   const extraText = !!searchText ? ` for '${searchText}'${fromTo}` : ''
-  document.getElementById('news-number').innerHTML = `${n} news displayed${extraText}.`
+  document.getElementById('news-number').innerHTML = `${n} news items displayed${extraText}.`
 }
 
 function handleSearch() {
