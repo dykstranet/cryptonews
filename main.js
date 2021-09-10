@@ -94,6 +94,15 @@ function removeAllChildNodes(parent) {
   }
 }
 
+function makeClickableText(url, content) {
+  const contentLink = document.createElement('a')
+  contentLink.href = url
+  contentLink.target ='_blank'
+  contentLink.innerHTML = content + ' '
+  contentLink.style = 'color: black; text-decoration: none'
+  return contentLink
+}
+
 function makeExternalLink(url) {
   // Used in crypto news list
   const link = document.createElement('a')
@@ -113,7 +122,10 @@ function renderNewsList(data) {
     const ul = document.createElement('ul')
     for (const entry of entries) {
       const dayItem = document.createElement('li')
-      dayItem.innerHTML = entry.content + ' '
+      contentLink = makeClickableText(entry.url, entry.content)
+      dayItem.appendChild(contentLink)
+      // The external link is an icon that can be clicked to go to the news
+      // url.
       const link = makeExternalLink(entry.url)
       dayItem.appendChild(link)
       ul.appendChild(dayItem)
