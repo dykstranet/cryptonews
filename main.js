@@ -74,6 +74,26 @@ function getYear(dateStr) {
   return dateStr.split('-')[0]
 }
 
+function stripYear(dateStr) {
+  // The substring is used to remove the year from the date.
+  // We know that the year is always 4-chars length
+  return dateStr.substring(5)
+}
+
+function pushToNewsDict(newsDict, date, news, url) {
+  const year = getYear(date)
+  newsDict[year].push({
+    content: stripYear(date) + ': ' + news,
+    url: url
+  })
+}
+
+function removeAllChildNodes(parent) {
+  while (parent.firstChild) {
+    parent.removeChild(parent.firstChild)
+  }
+}
+
 function makeExternalLink(url) {
   // Used in crypto news list
   const link = document.createElement('a')
@@ -85,8 +105,9 @@ function makeExternalLink(url) {
 
 function renderNewsList(data) {
   const cryptoNewsList = document.getElementById('crypto-news-list')
+  removeAllChildNodes(cryptoNewsList)
 
-  for (const [yr, entries] of Object.entries(data)) {
+  for (const [year, entries] of Object.entries(data)) {
     if (entries.length === 0) continue
     const yearItem = document.createElement('li')
     const ul = document.createElement('ul')
@@ -97,7 +118,7 @@ function renderNewsList(data) {
       dayItem.appendChild(link)
       ul.appendChild(dayItem)
     }
-    yearItem.innerHTML = yr
+    yearItem.innerHTML = year
     yearItem.appendChild(ul)
     cryptoNewsList.appendChild(yearItem)
   }
@@ -119,8 +140,18 @@ function handleSearch() {
     if (allUnfilteredNews.length === 0) return
     const searchText = form.elements['cryptonews-form-search-content'].value
     window.location.hash = `q=${searchText}`
+    const filteredNewsDict = {}
+    for (let year in ATHs) {
+      filteredNewsDict[year] = []
+    }
     const update = {
-      shapes: allUnfilteredNews.filter(e => filterNews(e.news, searchText) !== '')
+      shapes: allUnfilteredNews.filter(e => {
+        const isIncluded = filterNews(e.news, searchText) !== ''
+        if (isIncluded) {
+          pushToNewsDict(filteredNewsDict, e.x0, e.news, e.url)
+        }
+        return isIncluded
+      })
     }
     updateNewsNumber(searchText, update.shapes)
     // Update vertical lines
@@ -132,6 +163,8 @@ function handleSearch() {
       texts[el.idx] = el.news
     }
     Plotly.restyle(cryptoNewsPlot, {text: [texts]})
+    // Update news list
+    renderNewsList(filteredNewsDict)
   })
 }
 
@@ -179,17 +212,12 @@ function processData(allRows) {
         },
         news: unfilteredNews,
         idx: i,
+        url: row.url
       }
       allUnfilteredNews.push(verticalLine)
       if (!!news) {
         verticalLines.push(verticalLine)
-        const yr = getYear(row.Date)
-        newsDict[yr].push({
-          // The substring is used to remove the year from the date.
-          // We know that the year is always 4-chars length
-          content: row.Date.substring(5) + ': ' + news,
-          url: row.url
-        })
+        pushToNewsDict(newsDict, row.Date, news, row.url)
       }
     }
   }
