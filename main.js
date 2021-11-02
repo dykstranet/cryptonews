@@ -6,7 +6,7 @@ const siteValue = urlParams.get('site')
 function filterNews(content, keyword) {
   // Filter news content based on keyword
   if (!!keyword) {
-    const kwList = keyword.split(' ')
+    const kwList = keyword.toLowerCase().split(' ')
     const contentLower = content.toLowerCase()
     if (content !== '' && kwList.some(k => contentLower.includes(k))) {
       return content
