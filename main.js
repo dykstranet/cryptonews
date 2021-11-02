@@ -218,7 +218,7 @@ function processData(allRows) {
         y1: row.Close,
         x1: row.Date,
         line: {
-          color: 'rgb(105, 105, 105)',
+          color: 'black',
           dash: 'dot',
           width: 1,
         },
