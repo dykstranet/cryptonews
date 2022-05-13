@@ -2878,7 +2878,7 @@ Date,Close,News,url
 2018-06-02,7646.6,,
 2018-06-03,7729.3,,
 2018-06-04,7504.3,,
-2018-06-05,7631.5,,
+2018-06-05,7631.5,Swiss Banks Freeze $1Bln of Russian Oligarch’s Accounts Over US Sanctions Fears,https://www.themoscowtimes.com/2018/06/05/swiss-banks-freeze-1bln-russian-oligarchs-accounts-over-us-sanctions-fears-a61681
 2018-06-06,7661.0,,
 2018-06-07,7697.8,,
 2018-06-08,7622.1,,
@@ -3981,7 +3981,7 @@ Date,Close,News,url
 2021-06-09,37332.2,China Promotes Blockchain Development,https://www.scmp.com/tech/tech-trends/article/3136515/china-plans-accelerate-blockchain-development-and-adoption-push
 2021-06-10,36649.4,,
 2021-06-11,37314.6,,
-2021-06-12,35467.5,,
+2021-06-12,35467.5,First Post on Stacker News,https://stacker.news/items/1
 2021-06-13,39022.9,China Yunan Bans BTC Mining,https://decrypt.co/73375/confirmed-china-orders-yunnans-bitcoin-miners-to-cease-operating-by-end-of-june
 2021-06-14,40529.4,,
 2021-06-15,40156.1,,
@@ -4208,27 +4208,27 @@ Date,Close,News,url
 2022-01-22,35075.2,,
 2022-01-23,36269.5,,
 2022-01-24,36686.3,Robinhood Rolls Out Bitcoin Withdrawals,https://www.btctimes.com/news/robinhood-rolls-out-bitcoin-withdrawals
-2022-01-25,36950.6,,
+2022-01-25,36950.6,GoFundMe withholds $4.7 million from trucker convoy,https://www.thestar.com/business/2022/01/25/trucker-convoys-4-million-in-fundraising-frozen-by-gofundme.html
 2022-01-26,36800.4,,
 2022-01-27,37164.3,,
 2022-01-28,37745.1,,
 2022-01-29,38170.8,,
 2022-01-30,37917.7,,
 2022-01-31,38498.6,,
-2022-02-01,38709.7,,
+2022-02-01,38709.7,Thailand Drops 15% Capital Gains Tax on Cryptocurrencies,https://www.btctimes.com/news/thailand-drops-15-percent-capital-gains-tax-on-cryptocurrencies
 2022-02-02,36890.2,,
 2022-02-03,37287.8,,
-2022-02-04,41567.6,,
+2022-02-04,41567.6,Bitcoin Fundraiser For Canadian Truckers Launches,https://www.btctimes.com/news/bitcoin-fundraiser-canadian-truckers-gofundme-suspension
 2022-02-05,41412.1,,
-2022-02-06,42392.2,,
-2022-02-07,43833.9,,
-2022-02-08,44038.2,,
-2022-02-09,44388.9,,
-2022-02-10,43521.0,,
-2022-02-11,42388.4,,
+2022-02-06,42392.2,Kazakhstan floats 500% tax increase on Bitcoin miners,https://www.theblockcrypto.com/post/133366/kazakhstan-floats-500-tax-increase-on-bitcoin-miners-leading-some-to-eye-relocation
+2022-02-07,43833.9,KPMG Canada adds Bitcoin to its corporate treasury,https://bitcoinmagazine.com/business/canada-kpmg-adds-bitcoin-to-its-treasury
+2022-02-08,44038.2,Bitfinex Hackers Arrested after 6 years,https://investorplace.com/2022/02/bitfinex-hackers-who-stole-60m-from-crypto-exchange-arrested-after-six-years/
+2022-02-09,44388.9,Ukraine Is Using Bitcoin to 'Crowdfund War' With Russia,https://decrypt.co/92468/ukraine-using-bitcoin-crowdfund-war-russia-report
+2022-02-10,43521.0,US inflation rate climbs to 7.5%,https://www.marketwatch.com/story/coming-up-consumer-price-index-11644498273
+2022-02-11,42388.4,Russian government and central bank agree to treat Bitcoin as currency,https://www.investing.com/news/cryptocurrency-news/russian-government-and-central-bank-agree-to-treat-bitcoin-as-currency-2760136
 2022-02-12,42205.2,,
-2022-02-13,42061.1,,
-2022-02-14,42550.3,,
+2022-02-13,42061.1,Trudeau gives banks power to freeze trucker funds without court order,https://financialpost.com/fp-finance/banking/trudeau-gives-banks-power-to-freeze-funds-without-court-order-in-bid-to-choke-off-protest-funding
+2022-02-14,42550.3,BlockFi Agrees to Pay SEC $100 Million in Penalties,https://www.sec.gov/news/press-release/2022-26
 2022-02-15,44544.4,,
 2022-02-16,43883.6,,
 2022-02-17,40552.8,,
@@ -4237,8 +4237,8 @@ Date,Close,News,url
 2022-02-20,38355.0,,
 2022-02-21,37017.7,,
 2022-02-22,38248.2,,
-2022-02-23,37224.6,,
-2022-02-24,38339.2,,
+2022-02-23,37224.6,BIS and multiple central banks develop experimental multi-CBDC platform for international settlements,https://www.bis.org/press/p220322.htm
+2022-02-24,38339.2,Russia invades Ukraine,https://en.wikipedia.org/wiki/2022_Russian_invasion_of_Ukraine
 2022-02-25,39209.6,,
 2022-02-26,39115.5,,
 2022-02-27,37689.1,,
@@ -4251,22 +4251,22 @@ Date,Close,News,url
 2022-03-06,38403.1,,
 2022-03-07,38024.8,,
 2022-03-08,38744.8,,
-2022-03-09,41929.0,,
+2022-03-09,41929.0,Biden US Executive Order on Digital Assets,https://www.whitehouse.gov/briefing-room/presidential-actions/2022/03/09/executive-order-on-ensuring-responsible-development-of-digital-assets/
 2022-03-10,39416.3,,
-2022-03-11,38730.2,,
+2022-03-11,38730.2,US inflation 7.9%,https://apnews.com/article/us-inflation-soars-776c03520c90083894fedf31f1a7db00
 2022-03-12,38814.3,,
 2022-03-13,37792.4,,
 2022-03-14,39671.1,,
-2022-03-15,39285.7,,
-2022-03-16,41118.7,,
-2022-03-17,40914.8,,
+2022-03-15,39285.7,Wasabi Wallet’s CoinJoin Coordinator to Blacklist Certain Bitcoin Transactions,https://www.coindesk.com/tech/2022/03/14/wasabi-wallets-coinjoin-coordinator-to-blacklist-certain-bitcoin-transactions/
+2022-03-16,41118.7,Massive Mining Farm Shutdowns In Kazakhstan,https://www.btctimes.com/news/massive-mining-farm-shutdowns-in-kazakhstan
+2022-03-17,40914.8,US senator Warren introduces bill that would block cryptocurrency companies from doing business with sanctioned entities,https://www.forbes.com/sites/billybambrough/2022/03/17/senator-elizabeth-warren-introduces-a-game-changing-crypto-bill-as-the-price-of-bitcoin-ethereum-bnb-xrp-luna-cardano-solana-and-avalanche-surge
 2022-03-18,41767.8,,
 2022-03-19,42233.0,,
 2022-03-20,41276.0,,
-2022-03-21,41022.0,,
-2022-03-22,42373.0,,
+2022-03-21,41022.0,Hacker Steals Customer Data From Circle,https://decrypt.co/95586/hacker-steals-customer-data-circle-blockfi-big-crypto-firms
+2022-03-22,42373.0,New Indian Crypto Tax Policy Hurts Traders,https://www.btctimes.com/news/new-indian-crypto-tax-policy-hurts-traders
 2022-03-23,42912.0,,
-2022-03-24,44013.0,,
+2022-03-24,44013.0,Thailand announces ban on crypto payments,https://asia.nikkei.com/Spotlight/Cryptocurrencies/Thailand-bans-bitcoin-other-crypto-payments-starting-in-April
 2022-03-25,44331.0,,
 2022-03-26,44548.0,,
 2022-03-27,46859.0,,
@@ -4300,20 +4300,20 @@ Date,Close,News,url
 2022-04-24,39464.0,,
 2022-04-25,40427.0,,
 2022-04-26,38113.0,,
-2022-04-27,39243.0,,
-2022-04-28,39748.0,,
-2022-04-29,38581.0,,
+2022-04-27,39243.0,Central African Republic to Adopt Bitcoin As Legal Tender,https://www.btctimes.com/news/second-country-to-adopt-bitcoin-as-legal-tender
+2022-04-28,39748.0,Fidelity Offers Bitcoin for US 401(K) Accounts,https://www.btctimes.com/news/fidelity-offers-bitcoin-for-401k-accounts
+2022-04-29,38581.0,Panama’s National Assembly Approves Bill for Bitcoin Use,https://www.btctimes.com/news/panamas-national-assembly-approves-bill-for-bitcoin-use
 2022-04-30,37650.0,,
 2022-05-01,38461.0,,
-2022-05-02,38514.0,,
+2022-05-02,38514.0,"Dorsey, Saylor, Fidelity and others defend environmental impact of bitcoin mining in letter to EPA",https://bitcoinminingcouncil.com/wp-content/uploads/2022/05/Bitcoin_Letter_to_the_Environmental_Protection_Agency.pdf
 2022-05-03,37718.0,,
-2022-05-04,39688.0,,
+2022-05-04,39688.0,Fed raises rates by half a percentage point,https://www.cnbc.com/2022/05/04/fed-raises-rates-by-half-a-percentage-point-the-biggest-hike-in-two-decades-to-fight-inflation.html
 2022-05-05,36544.0,,
 2022-05-06,36009.0,,
 2022-05-07,35468.0,,
-2022-05-08,34060.0,,
-2022-05-09,30095.0,,
+2022-05-08,34060.0,Argentina’s Central Bank Wants To Prevent Lenders From Offering Bitcoin and Crypto Services,https://www.btctimes.com/news/argentinas-central-bank-wants-to-prevent-lenders-from-offering-bitcoin-and-crypto-services
+2022-05-09,30095.0,Luna Foundation Guard Lends $1.5B in BTC and UST for Stablecoin Peg,https://www.coindesk.com/markets/2022/05/09/luna-foundation-guard-lens-15b-in-btc-and-ust-for-stablecoin-peg/
 2022-05-10,31007.5,,
 2022-05-11,29068.2,,
 2022-05-12,28976.0,,
-2022-05-13,30406.2,,
+2022-05-13,30434.8,,
